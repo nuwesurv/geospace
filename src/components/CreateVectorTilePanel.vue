@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, toRaw } from 'vue'
 // import { GeoPackageAPI } from '@ngageoint/geopackage';
 
 const geopackagePath = ref(null)
