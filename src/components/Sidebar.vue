@@ -4,16 +4,24 @@ import { useCreateVectorTilesStore } from '@/Stores/CreateVectorTiles';
 import { storeToRefs } from 'pinia';
 import { useNavbarStore } from '@/Stores/NavBar';
 import { useProjectStore } from '@/Stores/Projects';
+import { watch } from 'vue';
 
 const { projectSelected } = storeToRefs(useProjectStore())
 const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
+ 
+
 
 
 </script>
 
 <template>
-    <div class="sidebar" :class="{inactive: iconSelected==='menu'}">
+    <div class="sidebar" :class="{inactive: iconSelected==='menu' }">
         <div class="button-grouper">
+            <div class="button" @click="projectSelected = 'web-mapping'"
+                :class="{ active: projectSelected === 'web-mapping' }">
+                <p>Web mapping</p>
+            </div>
+
             <div class="button" @click="projectSelected = 'vector-tiles'"
                 :class="{ active: projectSelected === 'vector-tiles' }">
                 <p>Create Vector Tiles</p>
@@ -22,6 +30,11 @@ const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
             <div class="button" @click="projectSelected = 'qgis-plugins'"
                 :class="{ active: projectSelected === 'qgis-plugins' }">
                 <p>QGIS plugins</p>
+            </div>
+
+            <div class="button" @click="projectSelected = 'messaging'"
+                :class="{ active: projectSelected === 'messaging' }">
+                <p>Realtime-messaging</p>
             </div>
 
         </div>

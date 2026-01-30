@@ -1,17 +1,33 @@
 <script setup>
+import { ref, watch } from 'vue';
 import NavBar from '@/components/NavBar.vue';
 import SideBar from '@/components/Sidebar.vue';
 import WorkSpace from '@/components/WorkSpace.vue';
-import Portif from '@/components/Portif.vue';
+import PortifolioVue from '@/components/PortifolioVue.vue';
+import { storeToRefs } from 'pinia';
+import { useNavbarStore } from '@/Stores/NavBar';
+const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
 
+
+// const workspace = ref(null)
+
+// function scrollToTop() {
+//     workspace.value.scrollTo({
+//         top: -workspace.value.scrollHeight,
+//         behavior: 'smooth'
+//     });
+// }
+// watch(iconSelected, (newValue,oldValue)=>{
+//   console.log(newValue)
+// })
 </script>
 
 <template>
   <div class="home-page">
     <NavBar/>
-    <div class="body">
+    <div class="body" ref="workspace" @click="scrollToTop">
       <WorkSpace/>
-      <Portif/>
+      <PortifolioVue/>
     </div>
 
   </div>
@@ -31,6 +47,7 @@ import Portif from '@/components/Portif.vue';
   display: flex;
   flex: 1;
   position: relative;
+  overflow-x: hidden;
   /* border: 1px solid red; */
 }
 

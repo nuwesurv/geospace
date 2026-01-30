@@ -1,17 +1,19 @@
 <script setup>
-import { onMounted, ref, watch } from 'vue';
-import CreateVectorTilePanel from './CreateVectorTilePanel.vue';
+import { onMounted, ref, watch, nextTick } from 'vue';
+// import CreateVectorTilePanel from './CreateVectorTilePanel.vue';
 import { storeToRefs } from 'pinia';
 import { useProjectStore } from '@/Stores/Projects';
 import Sidebar from './Sidebar.vue';
 import { useNavbarStore } from '@/Stores/NavBar';
+import ProjectManagement from './ProjectManagement.vue';
+import Cartography from '@/components/Cartography.vue';
 
 
 const { projectSelected } = storeToRefs(useProjectStore())
 const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
 
-let map = ref(null)
-const fontLoaded = ref(false);
+// let map = ref(null)
+// const fontLoaded = ref(false);
 // onMounted(() => {
 //   // Teleza fallback fonts icons.
 //   document.fonts.load('1em "Material Symbols Outlined"').then(() => {
@@ -32,36 +34,34 @@ const fontLoaded = ref(false);
 // })
 
 
-
-
-
-
 </script>
 
 <template>
-    <div class="workspace" v-if="!seePortifolio">
-      <Sidebar/>
-        <div class="create-vector-tiles" v-if="projectSelected==='vector-tiles'">
+    <div class="workspace" v-if="!seePortifolio" >
+        <Sidebar />
+        <div class="create-vector-tiles" v-if="projectSelected === 'vector-tiles'">
             <div id="map"></div>
         </div>
-
+        <ProjectManagement />
+        <Cartography />
     </div>
-
 
 </template>
 
 <style scoped>
-.workspace{
+.workspace {
     flex: 1;
-    height: 100%;
+    max-height: fit-content;
     /* border: 1px solid purple; */
     position: relative;
 }
+
 .create-vector-tiles {
     width: 100%;
     height: 100%;
     /* border: 1px solid purple; */
 }
+
 #map {
     width: 100%;
     height: 100%;
