@@ -1,5 +1,6 @@
 <script setup>
 import NavBar from '@/components/NavBar.vue';
+import Portifolio from '@/components/portifolio.vue';
 import SideBar from '@/components/Sidebar.vue';
 import WorkSpace from '@/components/WorkSpace.vue';
 </script>
@@ -8,8 +9,8 @@ import WorkSpace from '@/components/WorkSpace.vue';
   <div class="home-page">
     <NavBar/>
     <div class="body">
-      <SideBar/>
       <WorkSpace/>
+      <Portifolio/>
     </div>
 
   </div>
@@ -20,14 +21,15 @@ import WorkSpace from '@/components/WorkSpace.vue';
 .home-page{
   height: 100dvh;
   max-height: 100dvh;
-  border: 1px solid;
   display: flex;
   flex-direction: column;
+  /* align-items: center; */
 }
 
 .body{
   display: flex;
   flex: 1;
+  position: relative;
   /* border: 1px solid red; */
 }
 

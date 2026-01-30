@@ -1,101 +1,97 @@
 <script setup>
 
 import { useCreateVectorTilesStore } from '@/Stores/CreateVectorTiles';
-import { useToolsStore } from '@/Stores/Tools';
 import { storeToRefs } from 'pinia';
+import { useNavbarStore } from '@/Stores/NavBar';
+import { useProjectStore } from '@/Stores/Projects';
 
-
-const { tools, toolSelected } = storeToRefs(useToolsStore())
+const { projectSelected } = storeToRefs(useProjectStore())
+const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
 
 
 </script>
 
 <template>
-    <div class="sidebar">
-        <h3>TOOLS</h3>
+    <div class="sidebar" :class="{inactive: iconSelected==='menu'}">
         <div class="button-grouper">
-            <div class="button" v-for="tool, id in tools" :key="id" @click="toolSelected=id" :class="{active: toolSelected===id, inactive: toolSelected!=id}">
-                <p>{{ tool }}</p>
+            <div class="button" @click="projectSelected = 'vector-tiles'"
+                :class="{ active: projectSelected === 'vector-tiles' }">
+                <p>Create Vector Tiles</p>
             </div>
+
+            <div class="button" @click="projectSelected = 'qgis-plugins'"
+                :class="{ active: projectSelected === 'qgis-plugins' }">
+                <p>QGIS plugins</p>
+            </div>
+
         </div>
 
-        <a href="">About dev</a>
     </div>
 
 
 </template>
 
 <style scoped>
-.sidebar{
+.sidebar {
     height: 100%;
-    width: 380px;
-    min-width: 380px;
-    /* border: 1px solid red; */
+    width: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0.8rem 0;
-    background-color: var(--vt-c-white-mute);
+    padding: 1rem 0;
+    background-color: rgb(250, 250, 250);
+    transition: 0.2s ease;
 }
 
-.button-grouper{
+.sidebar.inactive{
+    transform: translate(-100%, 0);
+}
+
+
+.button-grouper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.7rem;
     width: 100%;
     flex: 1;
 }
 
-
-.button.active{
+.button {
     display: flex;
     align-items: center;
     width: 90%;
-    height: 3.5rem;
+    height: 2.5rem;
+    border-radius: 1.75rem;
+    padding: 0 1.5rem;
+    color: var(--text-secondary);
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.096);
+    transition: 0.3s ease;
+}
+
+
+.button.active {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 2.5rem;
     border-radius: 1.75rem;
     padding: 0 1.5rem;
     color: aliceblue;
     background-color: var(--theme-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.096);
 }
-.button.active:hover{
-    background-color: var(--theme-color-light);
-}
-
-.button.inactive{
-    display: flex;
-    align-items: center;
-    width: 90%;
-    height: 3.5rem;
-    border-radius: 1.75rem;
-    padding: 0 1.5rem;
-    color: var(--vt-text-unfocused);
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.096);
-}
 
 
-h3{
-    font-size: 2rem;
-    margin-bottom: 0.6rem;
-    color: var(--vt-heading);
-}
 
-p{
-    font-size: 1.3rem;
-}
 
-a{
-    color: var(--text-links);
-    font-size: 1.2rem;
-    text-underline-offset: 0.2rem;
-}
 
-a:hover{
-    border-radius: 1rem;
-    padding: 0.1rem 1rem;
-    box-shadow: 0 0 5px blue;
-    text-decoration: none;
+p {
+    font-size: 0.95rem;
 }
 </style>

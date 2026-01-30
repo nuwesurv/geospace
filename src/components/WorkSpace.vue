@@ -2,42 +2,35 @@
 import { onMounted, ref, watch } from 'vue';
 import CreateVectorTilePanel from './CreateVectorTilePanel.vue';
 import { storeToRefs } from 'pinia';
-import { useToolsStore } from '@/Stores/Tools';
+import { useProjectStore } from '@/Stores/Projects';
+import Sidebar from './Sidebar.vue';
+import { useNavbarStore } from '@/Stores/NavBar';
 
 
-const { tools, toolSelected } = storeToRefs(useToolsStore())
+const { projectSelected } = storeToRefs(useProjectStore())
+const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
+
 let map = ref(null)
+const fontLoaded = ref(false);
+// onMounted(() => {
+//   // Teleza fallback fonts icons.
+//   document.fonts.load('1em "Material Symbols Outlined"').then(() => {
+//     fontLoaded.value = true;
+//   });
 
+//   // Instantiate the mapboxgl object.
+//  mapboxgl.accessToken = 'pk.eyJ1IjoibnV3ZWFyaWhvIiwiYSI6ImNtNzNjNmN5NTBmNTAyaXNleXRrcjFkM3YifQ.6SBI1OnVfs50STLtPiYMNQ';
+//   map.value = new mapboxgl.Map({
+//     container: 'map',
+//     center: [32.3, 1],
+//     zoom: 7,
+//     style: 'mapbox://styles/mapbox/streets-v12',
+//     minZoom: 5.3,
+//     maxZoom: 20,
+//   });
 
-function initMap() {
-  mapboxgl.accessToken = 'pk.eyJ1IjoibnV3ZWFyaWhvIiwiYSI6ImNtNzNjNmN5NTBmNTAyaXNleXRrcjFkM3YifQ.6SBI1OnVfs50STLtPiYMNQ';
-  map.value = new mapboxgl.Map({
-    container: 'map',
-    center: [32.3, 1],
-    zoom: 7,
-    style: 'mapbox://styles/mapbox/streets-v12',
-    minZoom: 5.3,
-    maxZoom: 20,
-  });
-}
+// })
 
-onMounted(() => {
-  if (toolSelected.value === 'create_vector_tiles') {
-    initMap();
-  }
-});
-
-watch(toolSelected, (val) => {
-  if (val === 'create_vector_tiles') {
-    // Delay a tick to ensure DOM exists
-    setTimeout(() => {
-      initMap();
-    }, 50);
-  } else if (map.value) {
-    map.value.remove();
-    map.value = null;
-  }
-});
 
 
 
@@ -46,15 +39,12 @@ watch(toolSelected, (val) => {
 </script>
 
 <template>
-    <div class="workspace">
-        <div class="create-vector-tiles" v-if="toolSelected==='create_vector_tiles'">
+    <div class="workspace" v-if="!seePortifolio">
+      <Sidebar/>
+        <div class="create-vector-tiles" v-if="projectSelected==='vector-tiles'">
             <div id="map"></div>
-            <CreateVectorTilePanel/>
         </div>
 
-        <div class="qgis-plugins">
-
-        </div>
     </div>
 
 
