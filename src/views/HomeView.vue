@@ -1,8 +1,9 @@
 <script setup>
 import NavBar from '@/components/NavBar.vue';
-import Portifolio from '@/components/portifolio.vue';
 import SideBar from '@/components/Sidebar.vue';
 import WorkSpace from '@/components/WorkSpace.vue';
+import Portif from '@/components/Portif.vue';
+
 </script>
 
 <template>
@@ -10,7 +11,7 @@ import WorkSpace from '@/components/WorkSpace.vue';
     <NavBar/>
     <div class="body">
       <WorkSpace/>
-      <Portifolio/>
+      <Portif/>
     </div>
 
   </div>
