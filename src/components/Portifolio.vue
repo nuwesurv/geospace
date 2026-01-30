@@ -81,7 +81,7 @@ onMounted(() => {
     left: 0;
     transform: translate(-50%, 50%);
     width: 100%;
-    height: 30rem;
+    height: 10rem;
     background: radial-gradient(rgba(8, 82, 0, 0.603), rgba(6, 62, 0, 0.62), rgba(6, 62, 0, 0.14),transparent,transparent);
 }
 .top-light3 {
@@ -90,7 +90,7 @@ onMounted(() => {
     right: 0;
     transform: translate(+50%, 50%);
     width: 100%;
-    height: 30rem;
+    height: 10rem;
     background: radial-gradient(rgba(8, 82, 0, 0.603), rgba(6, 62, 0, 0.62), rgba(6, 62, 0, 0.14),transparent,transparent);
 }
 
