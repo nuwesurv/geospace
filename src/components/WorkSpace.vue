@@ -7,6 +7,8 @@ import Sidebar from './Sidebar.vue';
 import { useNavbarStore } from '@/Stores/NavBar';
 import ProjectManagement from './ProjectManagement.vue';
 import Cartography from '@/components/Cartography.vue';
+import MOdelling3D from './MOdelling3D.vue';
+import Softwares from './Softwares.vue';
 
 
 const { projectSelected } = storeToRefs(useProjectStore())
@@ -44,6 +46,8 @@ const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
         </div>
         <ProjectManagement />
         <Cartography />
+        <MOdelling3D/>
+        <Softwares/>
     </div>
 
 </template>
@@ -51,10 +55,12 @@ const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
 <style scoped>
 .workspace {
     flex: 1;
+    min-height: 100dvh;
     max-height: fit-content;
     /* border: 1px solid purple; */
     position: relative;
     overflow: scroll;
+    background-color: var(--background-primary);
     
 }
 

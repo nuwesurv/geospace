@@ -22,25 +22,34 @@ const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
                 <p>Web mapping</p>
             </div>
 
+            <div class="button" @click="projectSelected = '3dmodelling'"
+                :class="{ active: projectSelected === '3dmodelling' }">
+                <p>3D Modelling</p>
+            </div>
+            
             <div class="button" @click="projectSelected = 'vector-tiles'"
                 :class="{ active: projectSelected === 'vector-tiles' }">
                 <p>Create Vector Tiles</p>
             </div>
-
+            
             <div class="button" @click="projectSelected = 'qgis-plugins'"
                 :class="{ active: projectSelected === 'qgis-plugins' }">
                 <p>QGIS plugins</p>
             </div>
 
             <div class="button" @click="projectSelected = 'messaging'"
-                :class="{ active: projectSelected === 'messaging' }">
-                <p>Realtime-messaging</p>
+            :class="{ active: projectSelected === 'messaging' }">
+            <p>Realtime-messaging</p>
             </div>
-
+            
+            <div class="button" @click="projectSelected = 'software'"
+                :class="{ active: projectSelected === 'software' }">
+                <p>Software aquitance</p>
+            </div>
         </div>
 
     </div>
-
+    
 
 </template>
 

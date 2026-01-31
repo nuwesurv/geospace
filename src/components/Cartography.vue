@@ -71,9 +71,9 @@ onMounted(() => {
   <div class="cartography-section" v-if="projectSelected==='web-mapping'">
     <div class="positioning-div">
       <div class="cartography-text">
-        <h2>WEB MAPPING</h2>
+        <p class="heading">WEB MAPPING</p>
         <p>
-          This map visualizes Uganda’s regions using <b>vector tiles</b>.
+          A map showing Uganda’s regions using <b>vector tiles</b>.
           <br /><br />
           By leveraging vector tiles, the map loads quickly and handles
           <b>large datasets efficiently</b>, highlighting my focus on optimized workflows and modern GIS techniques.
@@ -96,7 +96,7 @@ onMounted(() => {
   justify-content: center;
   height: auto;
   padding: 2rem 0;
-  background-color: rgb(249, 249, 249);
+  background-color: var(--background-primary);
 }
 
 .positioning-div {
@@ -146,8 +146,10 @@ onMounted(() => {
   overflow-wrap: break-word;
 }
 
-h2 {
-  font-size: 3rem;
+.heading {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
 }

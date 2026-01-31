@@ -70,8 +70,8 @@ function scrollToBottom() {
     <div class="cartography-section" v-if="projectSelected === 'messaging'">
         <div class="positioning-div">
             <div class="cartography-text">
-                <h2>REAL TIME MESSAGING.</h2>
-                <p>I have implemented <b>Realtime chatting</b> between Sender and Recievers utilizing Superbase realtime webhooks.
+                <p class="heading">REAL TIME MESSAGING</p>
+                <p>I implemented <b>Realtime messaging</b> between Sender and Recievers leveraging webhooks.
                     <br><br>This is particulary useful for Manager and Ground team communication.
                 </p>
             </div>
@@ -126,8 +126,7 @@ function scrollToBottom() {
     justify-content: center;
     height: auto;
     padding: 2rem 0;
-    /* background-color: var(--vt-c-white); */
-    background-image: var(--background-color);
+    background-color: var(--background-primary);
 }
 
 .positioning-div {
@@ -141,14 +140,17 @@ function scrollToBottom() {
     border-radius: 2rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.205);
     position: relative;
+    background-color: white;
 }
 
 .cartography-text {
     width: 50%;
 }
 
-h2 {
-  font-size: 3rem;
+.heading {
+    text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
@@ -160,7 +162,6 @@ p {
 
 p b {
     font-size: inherit;
-    /* fixes bold text shrinking */
 }
 
 
@@ -234,7 +235,7 @@ p b {
     border: 0;
     border-radius: 3.25dvh;
     margin: 0 0.5rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding: 0 1rem;
     overflow-wrap: break-word;
     background-color: white;
@@ -256,7 +257,7 @@ p b {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 6.5dvh;
+    height: 2.8rem;
     border-radius: 50%;
     background-color: var(--theme-color2);
     aspect-ratio: 1/1;

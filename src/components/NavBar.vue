@@ -23,7 +23,7 @@ onMounted(() => {
         <span class="material-symbols-outlined icon1" v-if="fontLoaded">arrow_back</span>
       </div>
 
-      <p class="heading">Projects</p>
+      <p class="heading">Capabilities</p>
 
       <div class="icondiv" v-if="iconSelected === 'menu'" @click="iconSelected = 'cancel-menu'">
         <span class="material-symbols-outlined icon2" v-if="fontLoaded">menu</span>
@@ -66,9 +66,9 @@ onMounted(() => {
   align-items: center;
   justify-content: center;
   border-radius: 2.5rem;
-  border-bottom: 1px solid rgba(240, 248, 255, 0.171);
-  background: linear-gradient(#ffffff1f, #1069005a);
-  backdrop-filter: blur(13px);
+  border: 0.5px solid rgba(240, 248, 255, 0.171);
+  background: linear-gradient(#ffffff1f, #0a3f0040);
+  backdrop-filter: blur(15px);
   z-index: 10;
 
 }
@@ -123,7 +123,7 @@ onMounted(() => {
 
 .descriptions {
   font-size: 0.6rem;
-  color: rgb(213, 213, 213);
+  color: rgb(226, 226, 226);
   line-height: 0.6rem;
   text-align: center;
 }
