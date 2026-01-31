@@ -12,7 +12,8 @@
 
 <style scoped>
 .footer-body{
-    
+    height: 4.5rem;
+    width: 100%;
 }
 
 </style>
