@@ -59,7 +59,7 @@ const { projectSelected } = storeToRefs(useProjectStore())
         <p class="displaycard-heading">Softwares</p>
         <div class="divs-grouper">
           <div class="image-div">
-            <img src="@\assets\qgis.png" alt="">
+            <img src="@\assets\qgis1.png" alt="">
           </div>
           <div class="image-div">
             <img src="@\assets\blender.png" alt="">
