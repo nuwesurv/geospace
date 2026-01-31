@@ -71,7 +71,7 @@ onMounted(() => {
   <div class="cartography-section" v-if="projectSelected==='web-mapping'">
     <div class="positioning-div">
       <div class="cartography-text">
-        <h2>CARTOGRAPHY</h2>
+        <h2>WEB MAPPING</h2>
         <p>
           This map visualizes Uganda’s regions using <b>vector tiles</b>.
           <br /><br />

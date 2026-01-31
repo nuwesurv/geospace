@@ -8,24 +8,12 @@ import { storeToRefs } from 'pinia';
 import { useNavbarStore } from '@/Stores/NavBar';
 const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
 
-
-// const workspace = ref(null)
-
-// function scrollToTop() {
-//     workspace.value.scrollTo({
-//         top: -workspace.value.scrollHeight,
-//         behavior: 'smooth'
-//     });
-// }
-// watch(iconSelected, (newValue,oldValue)=>{
-//   console.log(newValue)
-// })
 </script>
 
 <template>
   <div class="home-page">
     <NavBar/>
-    <div class="body" ref="workspace" @click="scrollToTop">
+    <div class="body" @click="iconSelected = 'menu'">
       <SideBar/>
       <WorkSpace/>
       <PortifolioVue/>

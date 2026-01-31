@@ -15,7 +15,7 @@ const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
 </script>
 
 <template>
-    <div class="sidebar" :class="{inactive: iconSelected==='menu' }">
+    <div class="sidebar" :class="{inactive: iconSelected==='menu' || seePortifolio}">
         <div class="button-grouper">
             <div class="button" @click="projectSelected = 'web-mapping'"
                 :class="{ active: projectSelected === 'web-mapping' }">

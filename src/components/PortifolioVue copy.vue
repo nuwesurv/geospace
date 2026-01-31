@@ -22,10 +22,12 @@ onMounted(() => {
             <div class="top-light"></div>
             <div class="top-light2"></div>
             <div class="top-light3"></div>
-            <div class="image-wrapper">
-                <img src="@/assets/nuwepic1 cropped.jpg" alt="">
-            </div>
             <div class="page-grouper">
+                <div class="image-wrapper">
+                    <img src="@/assets/nuwepic1 cropped.jpg" class="img1" alt="">
+                    <img src="@/assets/nuwepic1 cropped.jpg" class="img2" alt="">
+                    <img src="@/assets/nuwepic1 cropped.jpg" class="img3" alt="">
+                </div>
                 <div class="about-text">
                     I am a highly motivated individual who seeks knowledge and aims to apply it to solve real world
                     problems in an effective and most efficient way.
@@ -58,9 +60,7 @@ onMounted(() => {
 .page1 {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    /* justify-content: center; */
-    flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100dvh;
     background-color: rgb(5, 50, 0);
@@ -97,7 +97,6 @@ onMounted(() => {
 
 .page-grouper {
     /* height: 60%; */
-    /* flex: 1; */
     width: 100%;
     padding: 1rem;
     display: flex;
@@ -109,14 +108,38 @@ onMounted(() => {
 }
 
 .image-wrapper {
-    height: 50dvh;
-    width: 100%;
+    height: 10rem;
+    width: 10rem;
     position: relative;
     /* border: 1px solid white; */
 }
 
+.img1,
+.img2,
+.img3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    border: 1px solid rgba(255, 255, 255, 0.425);
+}
+
+.img1 {
+    transform: translate(-65%, -50%) rotateZ(-10deg) scale(0.9);
+}
+
+.img2 {
+    transform: translate(-50%, -52%) rotateZ(0deg) scale(1.0);
+}
+
+.img3 {
+    transform: translate(-35%, -50%) rotateZ(15deg) scale(1.03);
+}
+
+
 img {
-    /* border-radius: 3rem; */
+    border-radius: 3rem;
     height: 100%;
     width: 100%;
     object-fit: cover;
