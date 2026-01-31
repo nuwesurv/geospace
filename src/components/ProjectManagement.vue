@@ -67,56 +67,56 @@ function scrollToBottom() {
 </script>
 
 <template>
-<div class="cartography-section" v-if="projectSelected==='messaging'">
-    <div class="positioning-div">
+    <div class="cartography-section" v-if="projectSelected === 'messaging'">
+        <div class="positioning-div">
+            <div class="cartography-text">
+                <h2>REAL TIME MESSAGING.</h2>
+                <p>I have implemented <b>Realtime chatting</b> between Sender and Recievers utilizing Superbase realtime webhooks.
+                    <br><br>This is particulary useful for Manager and Ground team communication.
+                </p>
+            </div>
+            <div class="phone">
+                <div class="topbar"></div>
+                <p class="admin-heading">Project Supervisor</p>
+                <div class="chat-wrapper" ref="chatWrapper">
+                    <div class="message-display" v-for="msg in messages">
+                        <MessageDisplay :message="msg.message" :who_sent="msg.who_sent" />
+                    </div>
+                </div>
+                <div class="messaging-inputs">
+                    <div class="message-input-div">
+                        <input type="text" placeholder="type here..." @click="scrollToBottom()" v-model="newMessage"
+                            @keyup.enter="sendMessage('supervisor'), scrollToBottom()">
+                    </div>
+                    <div class="send-button" @click="sendMessage('supervisor')">
+                        <span class="material-symbols-outlined icon" v-if="fontLoaded">send</span>
+                    </div>
+                </div>
+            </div>
 
-        <div class="phone">
-            <div class="topbar"></div>
-            <p class="admin-heading">Project Supervisor</p>
-            <div class="chat-wrapper" ref="chatWrapper">
-                <div class="message-display" v-for="msg in messages">
-                    <MessageDisplay :message="msg.message" :who_sent="msg.who_sent" />
+            <div class="phone">
+                <div class="topbar"></div>
+                <p class="admin-heading">Surveyor's device</p>
+                <div class="chat-wrapper chat-wrapper2" ref="chatWrapper">
+                    <div class="message-display" v-for="msg in messages">
+                        <MessageDisplay :message="msg.message" :who_sent="msg.who_sent" />
+                    </div>
+                </div>
+                <div class="messaging-inputs">
+                    <div class="message-input-div">
+                        <input type="text" placeholder="type here..." @click="scrollToBottom()"
+                            v-model="SupervisorMessage" @keyup.enter="sendMessage('surveyor'), scrollToBottom()">
+                    </div>
+                    <div class="send-button" @click="sendMessage('surveyor')">
+                        <span class="material-symbols-outlined icon" v-if="fontLoaded">send</span>
+                    </div>
                 </div>
             </div>
-            <div class="messaging-inputs">
-                <div class="message-input-div">
-                    <input type="text" placeholder="type here..." @click="scrollToBottom()" v-model="newMessage"
-                        @keyup.enter="sendMessage('supervisor'), scrollToBottom()">
-                </div>
-                <div class="send-button" @click="sendMessage('supervisor')">
-                    <span class="material-symbols-outlined icon" v-if="fontLoaded">send</span>
-                </div>
-            </div>
+
+
+
         </div>
-
-        <div class="phone">
-            <div class="topbar"></div>
-            <p class="admin-heading">Surveyor's device</p>
-            <div class="chat-wrapper chat-wrapper2" ref="chatWrapper">
-                <div class="message-display" v-for="msg in messages">
-                    <MessageDisplay :message="msg.message" :who_sent="msg.who_sent" />
-                </div>
-            </div>
-            <div class="messaging-inputs">
-                <div class="message-input-div">
-                    <input type="text" placeholder="type here..." @click="scrollToBottom()" v-model="SupervisorMessage"
-                        @keyup.enter="sendMessage('surveyor'), scrollToBottom()">
-                </div>
-                <div class="send-button" @click="sendMessage('surveyor')">
-                    <span class="material-symbols-outlined icon" v-if="fontLoaded">send</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="cartography-text">
-            <h2>PROJECT MANAGEMENT.</h2>
-            <p>In addition to map display showing realtime progress of field data capture in remote areas,
-                I have implemented <b>Realtime chats</b> between Project supervisor and Field Surveyor.
-            <br><br>This Platform also gives <b>evaluation</b> of each surveyor's perfomance as well as the whole project progress</p>
-        </div>
-
     </div>
-</div>
 </template>
 
 <style scoped>
@@ -125,7 +125,7 @@ function scrollToBottom() {
     align-items: center;
     justify-content: center;
     height: auto;
-    padding: 5rem 0;
+    padding: 2rem 0;
     /* background-color: var(--vt-c-white); */
     background-image: var(--background-color);
 }
@@ -148,18 +148,19 @@ function scrollToBottom() {
 }
 
 h2 {
-    font-size: 3rem;
-    color: var(--vt-c-black-soft);
-    margin-bottom: 0.5rem;
+  font-size: 3rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
 }
 
 p {
-    font-size: 1.4rem;
-    color: var(--vt-c-black-mute);
+  font-size: 1.4rem;
+  color: var(--text-secondary);
 }
 
 p b {
-    font-size: inherit;  /* fixes bold text shrinking */
+    font-size: inherit;
+    /* fixes bold text shrinking */
 }
 
 
@@ -177,7 +178,7 @@ p b {
     background-color: var(--vt-c-white-mute);
 }
 
-.topbar{
+.topbar {
     height: 0.2rem;
     width: 50px;
     margin-bottom: 0.2rem;

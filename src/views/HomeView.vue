@@ -26,6 +26,7 @@ const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
   <div class="home-page">
     <NavBar/>
     <div class="body" ref="workspace" @click="scrollToTop">
+      <SideBar/>
       <WorkSpace/>
       <PortifolioVue/>
     </div>
@@ -47,7 +48,7 @@ const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
   display: flex;
   flex: 1;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
   /* border: 1px solid red; */
 }
 

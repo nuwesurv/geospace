@@ -38,7 +38,7 @@ const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
 
 <template>
     <div class="workspace" v-if="!seePortifolio" >
-        <Sidebar />
+        <!-- <Sidebar /> -->
         <div class="create-vector-tiles" v-if="projectSelected === 'vector-tiles'">
             <div id="map"></div>
         </div>
@@ -54,6 +54,8 @@ const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
     max-height: fit-content;
     /* border: 1px solid purple; */
     position: relative;
+    overflow: scroll;
+    
 }
 
 .create-vector-tiles {

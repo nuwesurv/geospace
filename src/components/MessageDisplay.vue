@@ -21,9 +21,8 @@ const props = defineProps({
         </div>
     </div>
 
-
-
 </template>
+
 
 
 <style scoped>
@@ -88,5 +87,8 @@ const props = defineProps({
 
 .triangle.ugspaceMessage {
     background-color: rgb(241, 252, 255);
+}
+p{
+    font-size: 0.8rem;
 }
 </style>
