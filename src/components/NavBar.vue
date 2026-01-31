@@ -67,8 +67,8 @@ onMounted(() => {
   justify-content: center;
   border-radius: 2.5rem;
   border-bottom: 1px solid rgba(240, 248, 255, 0.171);
-  background: linear-gradient(#ffffff1f, #2bb6121c);
-  backdrop-filter: blur(5px);
+  background: linear-gradient(#ffffff1f, #1069005a);
+  backdrop-filter: blur(13px);
   z-index: 10;
 
 }
@@ -123,7 +123,7 @@ onMounted(() => {
 
 .descriptions {
   font-size: 0.6rem;
-  color: rgb(202, 202, 202);
+  color: rgb(213, 213, 213);
   line-height: 0.6rem;
   text-align: center;
 }
