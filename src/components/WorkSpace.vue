@@ -7,7 +7,7 @@ import Sidebar from './Sidebar.vue';
 import { useNavbarStore } from '@/Stores/NavBar';
 import ProjectManagement from './ProjectManagement.vue';
 import Cartography from '@/components/Cartography.vue';
-import MOdelling3D from './MOdelling3D.vue';
+import Modelling3D from './Modelling3D.vue';
 import Softwares from './Softwares.vue';
 
 
@@ -46,7 +46,7 @@ const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
         </div>
         <ProjectManagement />
         <Cartography />
-        <MOdelling3D/>
+        <Modelling3D/>
         <Softwares/>
     </div>
 
