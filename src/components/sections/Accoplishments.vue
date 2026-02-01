@@ -82,13 +82,13 @@ function flyToPlace(direction) {
             <div class="map-title">WORK HISTORY</div>
             <div class="action-buttons btn1">
                 <div class="icondiv" @click="seePortifolio = true">
-                    <span class="material-symbols-outlined icon1" v-if="fontLoaded">arrow_back</span>
+                    <span class="material-symbols-outlined" v-if="fontLoaded">keyboard_double_arrow_left</span>
                 </div>
                 Back
             </div>
             <div class="action-buttons btn2" @click="flyToPlace('next')">Next
                 <div class="icondiv">
-                    <span class="material-symbols-outlined forwardarrow" v-if="fontLoaded">arrow_forward</span>
+                    <span class="material-symbols-outlined " v-if="fontLoaded">keyboard_double_arrow_right</span>
                 </div>
             </div>
         </div>
@@ -138,23 +138,18 @@ function flyToPlace(direction) {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 2.2rem;
+    /* width: 2.2rem; */
     aspect-ratio: 1/1;
     border-radius: 50%;
     transition: width 0.2s ease, background-color 0.2s ease;
     box-sizing: border-box;
     color: aliceblue;
-    background-color: var(--theme-color);
+    /* border: 1px solid red; */
+    /* background-color: var(--theme-color); */
 }
 
-
-.icon1 {
-    font-size: 1.45rem;
-    font-weight: 600;
-}
-
-.icon2 {
-    font-size: 1.6rem;
+.material-symbols-outlined{
+    font-size: 1.5rem;
 }
 
 .action-buttons {
@@ -168,17 +163,16 @@ function flyToPlace(direction) {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0rem;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.521), 0 0 10px rgba(0, 0, 0, 0.432);
+    bottom: 1rem;
 }
 
 .btn1 {
-    bottom: 1rem;
     left: 1rem;
 }
 
 .btn2 {
-    bottom: 1rem;
     right: 1rem;
 }
 

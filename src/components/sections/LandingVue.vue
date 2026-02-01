@@ -22,7 +22,7 @@ onMounted(() => {
             <div class="top-light2"></div>
             <div class="top-light3"></div> -->
             <div class="image-wrapper">
-                <img src="@/assets/nuwepic2 cropped1.jpg" alt="">
+                <img src="@/assets/nuwepic2 cropped1.webp" alt="">
                 <!-- <img src="@/assets/nuwepic1 cropped.jpg" alt=""> -->
                 <div class="image-haze"></div>
             </div>

@@ -67,7 +67,8 @@ onMounted(() => {
   justify-content: center;
   border-radius: 2.5rem;
   border: 0.5px solid rgba(240, 248, 255, 0.171);
-  background: linear-gradient(#ffffff1f, #0139005a);
+  background: linear-gradient(rgba(192, 0, 0, 0.1), rgba(0, 0, 0, 0.1), rgba(157, 192, 0, 0.2));
+  /* background: linear-gradient(#ffffff1f, #0139005a); */
   backdrop-filter: blur(15px);
   z-index: 10;
 

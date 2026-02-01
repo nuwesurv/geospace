@@ -11,7 +11,7 @@
 
             <div class="educ-card card1">
                 <div class="image-div">
-                    <img src="@\assets\ntare.png" alt="">
+                    <img src="@\assets\ntare.webp" alt="">
                 </div>
                 <div class="details">
                     <p class="schname">Ntare school</p>
@@ -33,7 +33,7 @@
 
             <div class="educ-card card3">
                 <div class="image-div">
-                    <img src="@\assets\kyambogo.png" alt="">
+                    <img src="@\assets\kyambogo.webp" alt="">
                 </div>
                 <div class="details">
                     <p class="schname">Kyambogo University</p>
@@ -52,7 +52,7 @@
 
 <style scoped>
 .education-container {
-    height: 24rem;
+    height: 26rem;
     position: relative;
     background-color: rgb(246, 255, 246);
     /* border: 1px solid var(--theme-color); */
@@ -98,7 +98,7 @@ border-radius: 50%;
     position: absolute;
     left: 50%;
     width: 100%;
-    top: 1.5rem;
+    top: 2rem;
     text-align: center;
     transform: translate(-50%, -50%);
     /* height: 4rem; */

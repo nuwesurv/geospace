@@ -17,19 +17,19 @@ const { projectSelected } = storeToRefs(useProjectStore())
         <p class="displaycard-heading">Langs, libs and frameworks</p>
         <div class="divs-grouper">
           <div class="image-div">
-            <img src="@\assets\python.png" alt="">
+            <img src="@\assets\python.webp" alt="">
           </div>
           <div class="image-div">
-            <img src="@\assets\javascript.png" alt="">
+            <img src="@\assets\javascript.webp" alt="">
           </div>
           <div class="image-div">
-            <img src="@\assets\html.png" alt="">
+            <img src="@\assets\html.webp" alt="">
           </div>
           <div class="image-div">
-            <img src="@\assets\css.png" alt="">
+            <img src="@\assets\css.webp" alt="">
           </div>
           <div class="image-div">
-            <img src="@\assets\vuejs.png" alt="">
+            <img src="@\assets\vuejs.webp" alt="">
           </div>
           <div class="image-div">
             <img src="@\assets\flet.svg" alt="">
@@ -41,16 +41,16 @@ const { projectSelected } = storeToRefs(useProjectStore())
         <p class="displaycard-heading">Services</p>
         <div class="divs-grouper">
           <div class="image-div">
-            <img src="@\assets\netlify.png" alt="">
+            <img src="@\assets\netlify.webp" alt="">
           </div>
           <div class="image-div">
-            <img src="@\assets\supabase.png" alt="">
+            <img src="@\assets\supabase.webp" alt="">
           </div>
           <div class="image-div">
-            <img src="@\assets\mapbox1.png" alt="">
+            <img src="@\assets\mapbox1.webp" alt="">
           </div>
           <div class="image-div">
-            <img src="@\assets\chatgpt.png" alt="">
+            <img src="@\assets\chatgpt.webp" alt="">
           </div>
         </div>
       </div>
@@ -62,16 +62,16 @@ const { projectSelected } = storeToRefs(useProjectStore())
             <img src="@\assets\qgis1.png" alt="">
           </div>
           <div class="image-div">
-            <img src="@\assets\blender.png" alt="">
+            <img src="@\assets\blender.webp" alt="">
           </div>
           <div class="image-div">
-            <img src="@\assets\arcmap.png" alt="">
+            <img src="@\assets\arcmap.webp" alt="">
           </div>
           <div class="image-div">
-            <img src="@\assets\civil3d.png" alt="">
+            <img src="@\assets\civil3d.webp" alt="">
           </div>
           <div class="image-div">
-            <img src="@\assets\davinci.png" alt="">
+            <img src="@\assets\davinci.webp" alt="">
           </div>
         </div>
       </div>
@@ -121,7 +121,7 @@ const { projectSelected } = storeToRefs(useProjectStore())
   background-color: rgb(240, 255, 242);
 }
 
-.displaycard-heading{
+.displaycard-heading {
   font-size: 0.9rem;
   text-align: left;
   width: 100%;
