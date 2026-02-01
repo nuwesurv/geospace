@@ -9,8 +9,11 @@ const { projectSelected } = storeToRefs(useProjectStore())
 
 
 const map = ref(null);
-
+const fontLoaded = ref(false);
 onMounted(() => {
+  document.fonts.load('1em "Material Symbols Outlined"').then(() => {
+    fontLoaded.value = true;
+  });
   // Instantiate the Mapbox map
   mapboxgl.accessToken = 'pk.eyJ1IjoibnV3ZWFyaWhvIiwiYSI6ImNtNzNjNmN5NTBmNTAyaXNleXRrcjFkM3YifQ.6SBI1OnVfs50STLtPiYMNQ';
   map.value = new mapboxgl.Map({
