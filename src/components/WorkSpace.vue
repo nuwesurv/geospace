@@ -8,7 +8,7 @@ import { useNavbarStore } from '@/Stores/NavBar';
 import ProjectManagement from './ProjectManagement.vue';
 import Cartography from '@/components/Cartography.vue';
 import Modelling3D from './Modelling3D.vue';
-import Softwares from './Softwares.vue';
+import Softwares from './sections/Softwares.vue';
 
 
 const { projectSelected } = storeToRefs(useProjectStore())
@@ -39,15 +39,15 @@ const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
 </script>
 
 <template>
-    <div class="workspace" v-if="!seePortifolio" >
+    <div class="workspace" v-if="!seePortifolio">
         <!-- <Sidebar /> -->
         <div class="create-vector-tiles" v-if="projectSelected === 'vector-tiles'">
             <div id="map"></div>
         </div>
         <ProjectManagement />
         <Cartography />
-        <Modelling3D/>
-        <Softwares/>
+        <Modelling3D />
+        <Softwares />
     </div>
 
 </template>
@@ -61,7 +61,7 @@ const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
     position: relative;
     overflow: scroll;
     background-color: var(--background-primary);
-    
+
 }
 
 .create-vector-tiles {

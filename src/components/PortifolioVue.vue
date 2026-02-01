@@ -2,9 +2,11 @@
 import { onMounted, ref } from 'vue';
 import { useNavbarStore } from '@/Stores/NavBar';
 import { storeToRefs } from 'pinia';
-import Softwares from './Softwares.vue';
-import FooterVue from './FooterVue.vue';
-import LandingVue from './LandingVue.vue';
+import Softwares from './sections/Softwares.vue';
+import FooterVue from './sections/FooterVue.vue';
+import LandingVue from './sections/LandingVue.vue';
+import EducationTimeline from './sections/EducationTimeline.vue';
+import Accoplishments from './sections/Accoplishments.vue';
 
 const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
 
@@ -21,10 +23,11 @@ onMounted(() => {
 <template>
     <div class="portfolio" v-if="seePortifolio">
 
-        <LandingVue/>
-
-        <Softwares/>
-        <FooterVue/>
+        <LandingVue />
+        <EducationTimeline/>
+        <Accoplishments/>
+        <Softwares />
+        <FooterVue />
 
     </div>
 
@@ -36,6 +39,4 @@ onMounted(() => {
     max-height: fit-content;
     overflow-y: scroll;
 }
-
-
 </style>
