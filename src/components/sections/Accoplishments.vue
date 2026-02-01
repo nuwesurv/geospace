@@ -23,9 +23,9 @@ onMounted(() => {
         bearing: 0,
         pitch: 0,
         style: 'mapbox://styles/mapbox/streets-v12',
-        interactive: true,
+        // interactive: false,
         minZoom: 5.3,
-        maxZoom: 6,
+        maxZoom: 20,
     });
 
     // Add map controls
@@ -38,36 +38,40 @@ onMounted(() => {
         addVectorTileLayersMapbox(map.value, 'Regions', '#0281f7', '#deefff');
     });
 
-    // Popup for hover
-    const popup = new mapboxgl.Popup({ closeButton: false, closeOnClick: false });
-
-    map.value.on('mousemove', 'layer-fill', (e) => {
-        if (e.features.length > 0) {
-            const feature = e.features[0];
-            const coordinates = e.lngLat;
-
-            const properties = Object.entries(feature.properties)
-                .map(([k, v]) => `<strong>${k}</strong>: ${v}`)
-                .join('<br>');
-
-            popup
-                .setLngLat(coordinates)
-                .setHTML(`<div style="font-size:12px;">${properties}</div>`)
-                .addTo(map.value);
-
-            map.value.setFilter('layer-outline-hover', [
-                '==',
-                ['get', 'ADM1_EN'],
-                feature.properties.ADM1_EN || '',
-            ]);
-        }
-    });
-
-    map.value.on('mouseleave', 'layer-fill', () => {
-        popup.remove();
-        map.value.setFilter('layer-outline-hover', ['==', ['get', 'ADM1_EN'], '']);
-    });
+    map.value.on('load', () => {
+  map.value.addLayer({
+    id: '3d-buildings',
+    source: 'composite',
+    'source-layer': 'building',
+    filter: ['==', 'extrude', 'true'],
+    type: 'fill-extrusion',
+    minzoom: 15,
+    paint: {
+      'fill-extrusion-color': '#aaa',
+      'fill-extrusion-height': ['get', 'height'],
+      'fill-extrusion-base': ['get', 'min_height'],
+      'fill-extrusion-opacity': 0.6
+    }
+  });
 });
+
+
+    
+    
+});
+
+
+// 0.32796357655926867, 32.61297762038232
+function flyToPlace(direction) {
+    map.value.flyTo({
+      center: [32.61297762038232, 0.32796357655926867],
+      zoom: 16,
+      pitch: 60,
+      essential: true
+    });
+  }
+
+
 </script>
 
 <template>
@@ -82,7 +86,7 @@ onMounted(() => {
                 </div>
                 Back
             </div>
-            <div class="action-buttons btn2">Next
+            <div class="action-buttons btn2" @click="flyToPlace('next')">Next
                 <div class="icondiv">
                     <span class="material-symbols-outlined forwardarrow" v-if="fontLoaded">arrow_forward</span>
                 </div>

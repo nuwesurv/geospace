@@ -7,7 +7,7 @@ export function addVectorTileLayersMapbox(mapInstance, sourceFolder, outlineColo
         `${window.location.origin}/${sourceFolder}/{z}/{x}/{y}.pbf`,
       ],
       minzoom: 4,
-      maxzoom: 17,
+      maxzoom: 10,
     });
   }
 
