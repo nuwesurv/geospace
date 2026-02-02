@@ -39,37 +39,42 @@ onMounted(() => {
     });
 
     map.value.on('load', () => {
-  map.value.addLayer({
-    id: '3d-buildings',
-    source: 'composite',
-    'source-layer': 'building',
-    filter: ['==', 'extrude', 'true'],
-    type: 'fill-extrusion',
-    minzoom: 15,
-    paint: {
-      'fill-extrusion-color': '#aaa',
-      'fill-extrusion-height': ['get', 'height'],
-      'fill-extrusion-base': ['get', 'min_height'],
-      'fill-extrusion-opacity': 0.6
-    }
-  });
+        map.value.addLayer({
+            id: '3d-buildings',
+            source: 'composite',
+            'source-layer': 'building',
+            filter: ['==', 'extrude', 'true'],
+            type: 'fill-extrusion',
+            minzoom: 15,
+            paint: {
+                'fill-extrusion-color': '#aaa',
+                'fill-extrusion-height': ['get', 'height'],
+                'fill-extrusion-base': ['get', 'min_height'],
+                'fill-extrusion-opacity': 0.6
+            }
+        });
+    });
+
+
+
+
 });
 
-
-    
-    
-});
-
+const places = ref([
+    [0.32796357655926867, 32.61297762038232],
+    [0.3620423774556605, 32.6228266430235]
+])
+const currentPlace = ref(0)
 
 // 0.32796357655926867, 32.61297762038232
-function flyToPlace(direction) {
+function flyToPlace() {
     map.value.flyTo({
-      center: [32.61297762038232, 0.32796357655926867],
-      zoom: 16,
-      pitch: 60,
-      essential: true
+        center: [places.value[currentPlace.value][1], places.value[currentPlace.value][0]],
+        zoom: 16,
+        pitch: 60,
+        essential: true
     });
-  }
+}
 
 
 </script>
@@ -80,13 +85,13 @@ function flyToPlace(direction) {
         <div class="map-wrapper">
             <div id="map"></div>
             <div class="map-title">WORK HISTORY</div>
-            <div class="action-buttons btn1">
-                <div class="icondiv" @click="seePortifolio = true">
+            <div class="action-buttons btn1" @click="currentPlace -= 1, flyToPlace()">
+                <div class="icondiv">
                     <span class="material-symbols-outlined" v-if="fontLoaded">keyboard_double_arrow_left</span>
                 </div>
                 Back
             </div>
-            <div class="action-buttons btn2" @click="flyToPlace('next')">Next
+            <div class="action-buttons btn2" @click="currentPlace += 1, flyToPlace()">Next
                 <div class="icondiv">
                     <span class="material-symbols-outlined " v-if="fontLoaded">keyboard_double_arrow_right</span>
                 </div>
@@ -126,12 +131,15 @@ function flyToPlace(direction) {
     top: 1rem;
     left: 1rem;
     z-index: 2;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(26, 66, 0, 0.195);
     padding: 0.5rem 1rem;
     border-radius: 1rem;
     font-weight: bold;
-    color: #0281f7;
+    color: aliceblue;
+    /* color: var(--text-primary); */
     font-size: 1.2rem;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 10px black;
 }
 
 .icondiv {
@@ -148,7 +156,7 @@ function flyToPlace(direction) {
     /* background-color: var(--theme-color); */
 }
 
-.material-symbols-outlined{
+.material-symbols-outlined {
     font-size: 1.5rem;
 }
 
@@ -156,7 +164,7 @@ function flyToPlace(direction) {
     position: absolute;
     z-index: 2;
     background-color: var(--theme-color);
-    padding: 0.2rem 1rem;
+    padding: 0.4rem 1rem;
     border-radius: 2rem;
     color: aliceblue;
     font-size: 1rem;
@@ -165,15 +173,15 @@ function flyToPlace(direction) {
     justify-content: center;
     gap: 0rem;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.521), 0 0 10px rgba(0, 0, 0, 0.432);
-    bottom: 1rem;
+    bottom: 2rem;
 }
 
 .btn1 {
-    left: 1rem;
+    left: 1.5rem;
 }
 
 .btn2 {
-    right: 1rem;
+    right: 1.5rem;
 }
 
 .cartography-text {
