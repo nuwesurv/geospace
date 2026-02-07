@@ -312,7 +312,7 @@ function goForward(){
     flex-direction: column;
     background-color: rgb(246, 255, 246);
     overflow: hidden;
-    border-bottom: 1px solid var(--theme-color);
+    /* border-bottom: 1px solid var(--theme-color); */
 }
 
 .map-title {

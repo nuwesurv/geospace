@@ -101,7 +101,6 @@ border-radius: 50%;
     top: 2rem;
     text-align: center;
     transform: translate(-50%, -50%);
-    /* height: 4rem; */
     color: var(--theme-color);
     /* color: var(--text-primary); */
 }

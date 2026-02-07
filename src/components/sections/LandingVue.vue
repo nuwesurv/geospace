@@ -150,7 +150,7 @@ img {
 }
 
 .projects-btn {
-    color: var(--text-secondary);
+    color: var(--theme-color);
     border: 1px solid var(--theme-color);
     background-color: #f2fff0;
 }
@@ -167,7 +167,7 @@ img {
     color: #ffffff;
 }
 .forwardarrow{
-    color: var(--text-secondary);
+    color: var(--theme-color);
 }
 
 .material-symbols-outlined {

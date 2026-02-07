@@ -12,6 +12,7 @@ const { projectSelected } = storeToRefs(useProjectStore())
 
 <template>
   <div class="cartography-section" v-if="projectSelected === 'software' || seePortifolio">
+    <div class="heading">Software Acquitance</div>
     <div class="positioning-div">
       <div class="displaycard">
         <p class="displaycard-heading">Langs, libs and frameworks</p>
@@ -85,12 +86,18 @@ const { projectSelected } = storeToRefs(useProjectStore())
 <style scoped>
 .cartography-section {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.7rem;
   height: auto;
-  padding: 2rem 0;
-  background-color: var(--background-primary);
+  padding: 1.2rem 0;
+  background-color: white;
+  /* border: 1px solid red; */
+  /* background-color: var(--background-primary); */
+  color: var(--theme-color);
 }
+
 
 .positioning-div {
   display: flex;
@@ -114,7 +121,7 @@ const { projectSelected } = storeToRefs(useProjectStore())
   flex-direction: column;
   width: 100%;
   padding: 1rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.209);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.144);
   border-radius: 1rem;
   gap: 0.4rem;
   color: var(--theme-color);
