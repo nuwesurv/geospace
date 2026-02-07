@@ -86,7 +86,6 @@ onMounted(() => {
     })
 
     map.value.on('zoom', (e) => {
-        console.log(e.target.style.z)
         if (e.target.style.z > 15) {
             infoCard1.value.style.display = 'block'
             infoCard2.value.style.display = 'block'
@@ -114,8 +113,8 @@ onMounted(() => {
         const center = map.value.getCenter(); // getCenter() returns a LngLat object
         const centerCoords = [center.lng, center.lat];
 
-        console.log('Clicked coordinates:', clickCoords);
-        console.log('Map center coordinates:', centerCoords);
+        // console.log('Clicked coordinates:', clickCoords);
+        // console.log('Map center coordinates:', centerCoords);
     });
 
 
@@ -125,6 +124,8 @@ onMounted(() => {
 
 
 
+const currentPlace = ref(0)
+const isFirsttime = ref(true)
 const places = ref([
     {
         cardLocation: [32.61305115342631, 0.3283646500688633],
@@ -140,38 +141,77 @@ const places = ref([
     }
 ]);
 
-const currentPlace = ref(0)
+
 
 function flyToPlace() {
-    console.log(places.value)
+    const target = places.value[currentPlace.value].mapcenter
+
+    // STEP 1 — rotate toward 180 while flying halfway
     map.value.flyTo({
-        center: places.value[currentPlace.value].mapcenter,
-        zoom: 16,
-        pitch: 80,
-        bearing: 330,
+        center: target,
+        zoom: 15.1,
+        pitch: 40,
+        bearing: 350,
+        duration: 2000,
         essential: true
-    });
+    })
+
+    // STEP 2 — final cinematic landing
+    map.value.once('moveend', () => {
+        map.value.flyTo({
+            center: target,
+            zoom: 16,
+            pitch: 80,
+            bearing: 330,
+            duration: 5000,
+            essential: true
+        })
+    })
 }
 
+
+function goBack(){
+    if (isFirsttime.value && currentPlace.value === 0){
+        currentPlace.value = 0
+        isFirsttime.value = false
+        return
+    }
+    if (currentPlace.value > 0 && currentPlace.value < places.value.length+1){
+        currentPlace.value--
+    }
+}
+function goForward(){
+    if (isFirsttime.value && currentPlace.value === 0){
+        currentPlace.value = 0
+        isFirsttime.value = false
+        return
+    }
+    
+    if (currentPlace.value > -1 && currentPlace.value < places.value.length-1){
+        currentPlace.value++
+        console.log(currentPlace.value)
+        console.log(places.value.length)
+    }
+}
 
 </script>
 
 
 <template>
     <div class="accomplishment-container">
-        <div class="map-title">WORK HISTORY</div>
         <!-- ✅ Wrapper ensures map container is empty -->
         <div class="map-div">
             <div id="map"></div>
+            <div class="map-title">WORK HISTORY</div>
         </div>
         <div class="button-wrapper">
-            <div class="action-buttons" @click="currentPlace -= 1, flyToPlace()">
+            <div class="action-buttons" @click="goBack(), flyToPlace()">
                 <div class="icondiv">
                     <span class="material-symbols-outlined" v-if="fontLoaded">keyboard_double_arrow_left</span>
                 </div>
-                Back
+                Prev role
             </div>
-            <div class="action-buttons" @click="currentPlace += 1, flyToPlace()">Next
+            <div class="action-buttons" @click="goForward(), flyToPlace()">Next role
                 <div class="icondiv">
                     <span class="material-symbols-outlined " v-if="fontLoaded">keyboard_double_arrow_right</span>
                 </div>
@@ -267,27 +307,35 @@ function flyToPlace() {
 
 <style scoped>
 .accomplishment-container {
-    height: 30rem;
+    height: 35rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(246, 255, 246);
     overflow: hidden;
+    border-bottom: 1px solid var(--theme-color);
 }
 
 .map-title {
-    /* padding: 0.5rem 1rem; */
+    position: absolute;
+    top: 0.5rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 2rem;
+    width: fit-content;
     border-radius: 1rem;
     font-weight: bold;
-    color: var(--theme-color);
-    /* color: var(--text-primary); */
+    color: white;
     font-size: 1.2rem;
     backdrop-filter: blur(15px);
     height: 2.5rem;
     text-align: center;
+    
 }
 
 .map-div {
     flex: 1 1 auto;
     display: flex;
+    position: relative;
 }
 
 #map {
@@ -305,12 +353,12 @@ function flyToPlace() {
     justify-content: space-between;
     padding: 0 0.7rem;
     /* border: 1px solid red; */
-    height: 3rem;
+    height: 3.5rem;
 }
 
 .action-buttons {
     background-color: var(--theme-color);
-    padding: 0.4rem 1rem;
+    padding: 0.3rem 1rem;
     border-radius: 2rem;
     color: aliceblue;
     font-size: 1rem;
@@ -363,13 +411,7 @@ p b {
     font-size: inherit;
 }
 
-.accomplishment-container {
-    height: 30rem;
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(246, 255, 246);
-    overflow: hidden;
-}
+
 
 
 /* ===============================

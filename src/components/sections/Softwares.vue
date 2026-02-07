@@ -47,7 +47,7 @@ const { projectSelected } = storeToRefs(useProjectStore())
             <img src="@\assets\supabase.webp" alt="">
           </div>
           <div class="image-div">
-            <img src="@\assets\mapbox1.webp" alt="">
+            <img src="@\assets\mapbox1.png" alt="">
           </div>
           <div class="image-div">
             <img src="@\assets\chatgpt.webp" alt="">
