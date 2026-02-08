@@ -30,7 +30,7 @@
 
 <style scoped>
 .footer-body {
-    height: 4.5rem;
+    height: 6rem;
     width: 100%;
     background-color: rgb(11, 21, 34);
     color: rgb(193, 199, 203);

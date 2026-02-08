@@ -7,6 +7,8 @@ import FooterVue from './sections/FooterVue.vue';
 import LandingVue from './sections/LandingVue.vue';
 import EducationTimeline from './sections/EducationTimeline.vue';
 import Accoplishments from './sections/Accoplishments.vue';
+import NotableProjects from './sections/NotableProjects.vue';
+import References from './sections/References.vue';
 
 const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
 
@@ -26,6 +28,8 @@ onMounted(() => {
         <LandingVue />
         <EducationTimeline/>
         <Accoplishments/>
+        <NotableProjects/>
+        <References/>
         <Softwares />
         <FooterVue />
 

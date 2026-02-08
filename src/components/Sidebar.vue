@@ -58,7 +58,7 @@ const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
     padding: 1rem 0;
     background-color: rgb(250, 250, 250);
     transition: 0.2s ease;
-    border: 1px solid var(--theme-color);
+    /* border: 1px solid var(--theme-color); */
 }
 
 .sidebar.inactive {
