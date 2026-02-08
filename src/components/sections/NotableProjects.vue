@@ -25,7 +25,7 @@ onMounted(() => {
         <div class="details">
             <p>Our 3 people team on the SLAAC project were tasked with removing 5000+ small topological errors in the
                 surveyed data i.e. sliver polygons, gaps and overlaps etc.
-                The task was huge and time consuming yet there were others to be accomplished.
+                The task was huge and time consuming yet there were others tasks to be accomplished.
                 <br><br>
                 So I set out to develop a QGIS plugin to solve these topological errors
                 an example shown above where gaps in geometry are automatically filled using one parcel as a reference

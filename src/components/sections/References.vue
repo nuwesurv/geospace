@@ -30,7 +30,7 @@ const { projectSelected } = storeToRefs(useProjectStore())
 
         <div class="card-body">
           <p>
-            He is an innovative individual well conversa
+            He is an innovative individual well conversant with GIS systems and database management systems. I reccomend him for this role and have high trust he can execute this role deligently.
           </p>
         </div>
       </div>

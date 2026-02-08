@@ -266,10 +266,11 @@ function goForward(){
 
             <div class="card-body">
                 <p>
-                    I got the opportunity to work on land acquisition projects where I gained skills in the field of
-                    mapping and spatial data management on a large scale.
+                    I am a Land surveyor and GIS data manager at I&G Maxconsults where my role entails carrying out survey work.
                     <br><br>
-                    It's at this time I got interested in GIS mapping softwares like QGIS.
+                    Which include: Opening of Boundaries, Topographical surveys.
+                    <br><br>
+                    I develop softwares too for the firm which aid in automating its work operations.
                 </p>
             </div>
         </div>
@@ -292,10 +293,9 @@ function goForward(){
 
             <div class="card-body">
                 <p>
-                    I got the opportunity to work on land acquisition projects where I gained skills in the field of
-                    mapping and spatial data management on a large scale.
+                    I was a Cartographer on this role where my duties were to map, work closely with Field surveyors and Data managers to ensure that both the spatial and non-spatial data could meet the SLAAC project standards.
                     <br><br>
-                    It's at this time I got interested in GIS mapping softwares like QGIS.
+                    On this role, I mapped over 8000+ Parcels and presented it for submission to the Ministry of Lands.
                 </p>
             </div>
         </div>

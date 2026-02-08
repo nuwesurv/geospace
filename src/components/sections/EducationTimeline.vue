@@ -3,48 +3,51 @@
         <div class="heading">
             Education Background
         </div>
-        <div class="timeline">
-            <div class="dots dot1"></div>
-            <div class="dots dot2"></div>
-            <div class="dots dot3"></div>
+        <div class="timelinediv">
+
+            <div class="timeline">
+                <div class="dots dot1"></div>
+                <div class="dots dot2"></div>
+                <div class="dots dot3"></div>
 
 
-            <div class="educ-card card1">
-                <div class="image-div">
-                    <img src="@\assets\ntare.webp" alt="">
+                <div class="educ-card card1">
+                    <div class="image-div">
+                        <img src="@\assets\ntare.webp" alt="">
+                    </div>
+                    <div class="details">
+                        <p class="schname">Ntare school</p>
+                        <p class="grades">24 agg</p>
+                        <p class="year">2014 - 2017</p>
+                    </div>
                 </div>
-                <div class="details">
-                    <p class="schname">Ntare school</p>
-                    <p class="grades">24 agg</p>
-                    <p class="year">2014 - 2017</p>
-                </div>
-            </div>
 
-            <div class="educ-card card2">
-                <div class="image-div">
-                    <img src="@\assets\kitende.png" alt="">
+                <div class="educ-card card2">
+                    <div class="image-div">
+                        <img src="@\assets\kitende.png" alt="">
+                    </div>
+                    <div class="details">
+                        <p class="schname">St Mary's Kitende</p>
+                        <p class="grades">19 pts</p>
+                        <p class="year">2018 - 2019</p>
+                    </div>
                 </div>
-                <div class="details">
-                    <p class="schname">St Mary's Kitende</p>
-                    <p class="grades">19 pts</p>
-                    <p class="year">2018 - 2019</p>
-                </div>
-            </div>
 
-            <div class="educ-card card3">
-                <div class="image-div">
-                    <img src="@\assets\kyambogo.webp" alt="">
+                <div class="educ-card card3">
+                    <div class="image-div">
+                        <img src="@\assets\kyambogo.webp" alt="">
+                    </div>
+                    <div class="details">
+                        <p class="schname">Kyambogo University</p>
+                        <p class="course">Land surveying || GIS</p>
+                        <p class="grades">1st class</p>
+                        <p class="year">2014 - 2017</p>
+                    </div>
                 </div>
-                <div class="details">
-                    <p class="schname">Kyambogo University</p>
-                    <p class="course">Land surveying || GIS</p>
-                    <p class="grades">1st class</p>
-                    <p class="year">2014 - 2017</p>
-                </div>
+
             </div>
 
         </div>
-
     </div>
 
 </template>
@@ -52,10 +55,21 @@
 
 <style scoped>
 .education-container {
-    height: 26rem;
     position: relative;
     background-color: rgb(246, 255, 246);
     /* border: 1px solid var(--theme-color); */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+
+.timelinediv{
+    position: relative;
+    width: 90%;
+    height: 20rem;
+    /* border: 1px solid green; */
 }
 
 .timeline {
@@ -63,49 +77,45 @@
     border-radius: 0.2rem;
     width: 0.2rem;
     height: 18rem;
-    left: 0.8rem;
+    /* left: 1.5rem; */
+    left: 0;
     top: 50%;
-    transform: translate(0, -45%) ;
+    transform: translate(0, -50%);
     background-color: var(--theme-color);
 }
 
-.dots{
-position: absolute;
-width: 0.9rem;
-aspect-ratio: 1/1;
-background-color: white;
-left: 50%;
-transform: translate(-50%, -50%);
-border: 2px solid var(--theme-color);
-border-radius: 50%;
+.dots {
+    position: absolute;
+    width: 0.9rem;
+    aspect-ratio: 1/1;
+    background-color: white;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--theme-color);
+    border-radius: 50%;
 }
 
-.dot1{
+.dot1 {
     top: 2rem;
 }
 
-.dot2{
+.dot2 {
     top: 9rem;
 }
 
-.dot3{
+.dot3 {
     top: 16rem;
 }
 
 
 
-.heading{
-    position: absolute;
-    left: 50%;
-    width: 100%;
+.heading {
     top: 2rem;
-    text-align: center;
-    transform: translate(-50%, -50%);
     color: var(--theme-color);
     /* color: var(--text-primary); */
 }
 
-.educ-card{
+.educ-card {
     position: absolute;
     left: 2rem;
     width: 80vw;
@@ -121,20 +131,20 @@ border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.144);
 }
 
-.card1{
+.card1 {
     top: 2rem;
 }
 
-.card2{
+.card2 {
     top: 9rem;
 }
 
-.card3{
+.card3 {
     top: 16rem;
 }
 
 
-.details{
+.details {
     display: flex;
     flex-direction: column;
     /* gap: 0.2rem; */
@@ -145,7 +155,7 @@ border-radius: 50%;
     flex: 1;
 }
 
-.schname{
+.schname {
     font-size: 0.95rem;
     line-height: 0.95rem;
     color: var(--text-primary);
@@ -153,20 +163,21 @@ border-radius: 50%;
     /* text-decoration: underline; */
 }
 
-.course{
+.course {
     font-size: 0.75rem;
     line-height: 0.75rem;
     color: var(--text-secondary);
     margin-bottom: 0.35rem;
 }
 
-.grades{
+.grades {
     font-size: 0.7rem;
     line-height: 0.7rem;
     color: var(--text-secondary);
     margin-bottom: 0.35rem;
 }
-.year{
+
+.year {
     font-size: 0.7rem;
     line-height: 0.7rem;
     color: var(--text-secondary);
@@ -177,21 +188,21 @@ border-radius: 50%;
 
 
 .image-div {
-  width: 4rem;
-  aspect-ratio: 1/1;
-  /* border: 1px solid red; */
-  /* flex: 1 1 1; */
-  flex-grow: 0;
-  overflow: hidden;
-  border-radius: 1rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+    width: 4rem;
+    aspect-ratio: 1/1;
+    /* border: 1px solid red; */
+    /* flex: 1 1 1; */
+    flex-grow: 0;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
 }
 
 img {
-  height: 100%;
-  width: 100%;
-  scale: 0.85;
-  /* aspect-ratio: 1/1; */
-  object-fit: cover;
+    height: 100%;
+    width: 100%;
+    scale: 0.85;
+    /* aspect-ratio: 1/1; */
+    object-fit: cover;
 }
 </style>
