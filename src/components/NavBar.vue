@@ -23,7 +23,7 @@ onMounted(() => {
         <span class="material-symbols-outlined icon1" v-if="fontLoaded">arrow_back</span>
       </div>
 
-      <p class="heading">Capabilities</p>
+      <p class="heading">Projects</p>
 
       <div class="icondiv" v-if="iconSelected === 'menu'" @click="iconSelected = 'cancel-menu'">
         <span class="material-symbols-outlined icon2" v-if="fontLoaded">menu</span>

@@ -25,7 +25,7 @@ onMounted(() => {
         bearing: 0,
         pitch: 0,
         style: 'mapbox://styles/mapbox/streets-v12',
-        // interactive: false,
+        interactive: false,
         minZoom: 5.3,
         maxZoom: 20,
     });
@@ -310,7 +310,7 @@ function goForward(){
     height: 35rem;
     display: flex;
     flex-direction: column;
-    background-color: rgb(246, 255, 246);
+    background-color: rgb(231, 255, 231);
     overflow: hidden;
     /* border-bottom: 1px solid var(--theme-color); */
 }

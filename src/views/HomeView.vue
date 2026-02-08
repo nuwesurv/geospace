@@ -16,7 +16,7 @@ const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
     <div class="body" @click="iconSelected = 'menu'">
       <SideBar/>
       <WorkSpace/>
-      <PortifolioVue/>
+      <PortifolioVue/> 
     </div>
 
   </div>

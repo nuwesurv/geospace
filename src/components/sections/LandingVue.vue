@@ -2,8 +2,6 @@
 import { onMounted, ref } from 'vue';
 import { useNavbarStore } from '@/Stores/NavBar';
 import { storeToRefs } from 'pinia';
-import Softwares from './Softwares.vue';
-import FooterVue from './FooterVue.vue';
 
 const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
 
@@ -58,7 +56,7 @@ onMounted(() => {
     width: 100%;
     height: 100dvh;
     background-color: var(--background-primary);
-    /* background-color: #053200; */
+    /* background-color: #f0f0f0; */
 }
 
 

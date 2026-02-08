@@ -8,14 +8,14 @@ import { watch } from 'vue';
 
 const { projectSelected } = storeToRefs(useProjectStore())
 const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
- 
+
 
 
 
 </script>
 
 <template>
-    <div class="sidebar" :class="{inactive: iconSelected==='menu' || seePortifolio}">
+    <div class="sidebar" :class="{ inactive: iconSelected === 'menu' || seePortifolio }">
         <div class="button-grouper">
             <div class="button" @click="projectSelected = 'web-mapping'"
                 :class="{ active: projectSelected === 'web-mapping' }">
@@ -26,30 +26,21 @@ const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
                 :class="{ active: projectSelected === '3dmodelling' }">
                 <p>3D Modelling</p>
             </div>
-            
-            <div class="button" @click="projectSelected = 'vector-tiles'"
-                :class="{ active: projectSelected === 'vector-tiles' }">
-                <p>Create Vector Tiles</p>
-            </div>
-            
+
             <div class="button" @click="projectSelected = 'qgis-plugins'"
                 :class="{ active: projectSelected === 'qgis-plugins' }">
                 <p>QGIS plugins</p>
             </div>
 
+            <!-- 
             <div class="button" @click="projectSelected = 'messaging'"
             :class="{ active: projectSelected === 'messaging' }">
             <p>Realtime-messaging</p>
-            </div>
-            
-            <div class="button" @click="projectSelected = 'software'"
-                :class="{ active: projectSelected === 'software' }">
-                <p>Software aquitance</p>
-            </div>
+            </div> -->
         </div>
 
     </div>
-    
+
 
 </template>
 
@@ -67,9 +58,10 @@ const { iconSelected, seePortifolio } = storeToRefs(useNavbarStore())
     padding: 1rem 0;
     background-color: rgb(250, 250, 250);
     transition: 0.2s ease;
+    border: 1px solid var(--theme-color);
 }
 
-.sidebar.inactive{
+.sidebar.inactive {
     transform: translate(-100%, 0);
 }
 
