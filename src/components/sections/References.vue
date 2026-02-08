@@ -30,10 +30,7 @@ const { projectSelected } = storeToRefs(useProjectStore())
 
         <div class="card-body">
           <p>
-            I got the opportunity to work on land acquisition projects where I gained skills in the field of
-            mapping and spatial data management on a large scale.
-            <br><br>
-            It's at this time I got interested in GIS mapping softwares like QGIS.
+            He is an innovative individual well conversa
           </p>
         </div>
       </div>
