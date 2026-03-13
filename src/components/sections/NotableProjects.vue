@@ -31,7 +31,7 @@ onMounted(() => {
                     the boundaries of one of the parcels to touch the neighbor just as it would be on ground.
                 </p>
             </div>
-            <div class="projects-btn" @click="seePortifolio = false">See other projects
+            <div class="projects-btn" @click="seePortifolio = true">See other projects
                 <div class="icondiv">
                     <span class="material-symbols-outlined forwardarrow" v-if="fontLoaded">arrow_forward</span>
                 </div>
