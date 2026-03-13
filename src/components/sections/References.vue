@@ -12,29 +12,32 @@ const { projectSelected } = storeToRefs(useProjectStore())
 
 <template>
   <div class="cartography-section" v-if="projectSelected === 'software' || seePortifolio">
-    <div class="heading">What my References say?</div>
-    <div class="positioning-div">
-      <div class="map-info-card">
+    <div class="page-container">
 
-        <div class="card-header">
-          <div class="image-div">
-            <img src="@/assets/ig.webp" />
+      <div class="heading">What my References say?</div>
+      <div class="positioning-div">
+        <div class="map-info-card">
+
+          <div class="card-header">
+            <div class="image-div">
+              <img src="@/assets/ig.webp" />
+            </div>
+
+            <div class="header-details">
+              <h3>RSU Ignatious Tumukunde</h3>
+              <p>I&G Co-founder</p>
+              <p>NSA Mall, Kiwatule</p>
+            </div>
           </div>
 
-          <div class="header-details">
-            <h3>RSU Ignatious Tumukunde</h3>
-            <p>I&G Co-founder</p>
-            <p>NSA Mall, Kiwatule</p>
+          <div class="card-body">
+            <p>
+              He is an innovative individual well conversant with GIS systems and database management systems.
+            </p>
           </div>
         </div>
 
-        <div class="card-body">
-          <p>
-            He is an innovative individual well conversant with GIS systems and database management systems. I reccomend him for this role and have high trust he can execute this role deligently.
-          </p>
-        </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -42,6 +45,19 @@ const { projectSelected } = storeToRefs(useProjectStore())
 
 <style scoped>
 .cartography-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  height: auto;
+  padding: 1.2rem 0;
+  background-color: rgb(231, 255, 231);
+  /* background-color: var(--background-primary); */
+  color: var(--theme-color);
+}
+
+.page-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -137,5 +153,19 @@ const { projectSelected } = storeToRefs(useProjectStore())
   font-size: 0.9rem;
   line-height: 1.4;
   color: var(--text-secondary);
+}
+
+
+
+@media (min-width: 720px) {
+  .cartography-section{
+    padding: 3rem 0;
+  }
+  .page-container {
+    width: 60%;
+    height: 100%;
+    box-shadow: 0 0 10px 2px #5c4bf125;
+    border-radius: 1rem;
+  }
 }
 </style>

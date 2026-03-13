@@ -72,7 +72,7 @@ onMounted(() => {
 
 <template>
   <div class="cartography-section" v-if="projectSelected==='web-mapping'">
-    <div class="positioning-div">
+    <div class="page-container">
       <div class="cartography-text">
         <p class="heading">WEB MAPPING</p>
         <p>

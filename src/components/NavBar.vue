@@ -35,7 +35,7 @@ onMounted(() => {
 
     <div class="portifolio-nav" v-else>
       <p class="names">NUWE ARIHO</p>
-      <p class="descriptions"> GIS || Software Dev || Content Creator</p>
+      <p class="descriptions"> GIS || Land surveyor</p>
     </div>
 
   </div>

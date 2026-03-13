@@ -43,4 +43,17 @@ onMounted(() => {
     max-height: fit-content;
     overflow-y: scroll;
 }
+/* 
+.portfolio::-webkit-scrollbar {
+    width: 6px;
+}
+
+.portfolio::-webkit-scrollbar-thumb {
+    background: var(--theme-color);
+    border-radius: 10px;
+}
+
+.portfolio::-webkit-scrollbar-track {
+    background: transparent;
+} */
 </style>

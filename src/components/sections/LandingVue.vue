@@ -15,19 +15,17 @@ onMounted(() => {
 </script>
 
 <template>
-<div class="page1">
-            <!-- <div class="top-light"></div>
-            <div class="top-light2"></div>
-            <div class="top-light3"></div> -->
+    <div class="page1">
+        <div class="page-container">
             <div class="image-wrapper">
                 <img src="@/assets/nuwepic2 cropped1.webp" alt="">
-                <!-- <img src="@/assets/nuwepic1 cropped.jpg" alt=""> -->
                 <div class="image-haze"></div>
             </div>
             <div class="page-grouper">
                 <div class="about-text">
-                    I am a highly motivated individual who seeks knowledge and aims to apply it to solve real world
-                    problems in an effective and most efficient way.
+                    <strong style="color: var(--theme-color)">NUWE ARIHO</strong> is a GIS and Land Surveying
+                    professional with 1 year of hands-on practice in GIS database design and management, GNSS field
+                    operations and land surveying.
                 </div>
                 <div class="action-buttons">
                     <div class="profile-btn">Continue
@@ -35,7 +33,7 @@ onMounted(() => {
                             <span class="material-symbols-outlined downaroow" v-if="fontLoaded">arrow_cool_down</span>
                         </div>
                     </div>
-                    <div class="projects-btn" @click="seePortifolio = false">See projects
+                    <div class="projects-btn" @click="seePortifolio = true">See projects
                         <div class="icondiv">
                             <span class="material-symbols-outlined forwardarrow" v-if="fontLoaded">arrow_forward</span>
                         </div>
@@ -43,6 +41,7 @@ onMounted(() => {
                 </div>
             </div>
         </div>
+    </div>
 
 </template>
 
@@ -50,13 +49,19 @@ onMounted(() => {
 .page1 {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    /* justify-content: center; */
-    flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100dvh;
     background-color: var(--background-primary);
-    /* background-color: #f0f0f0; */
+}
+
+.page-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -67,7 +72,7 @@ onMounted(() => {
     /* transform: translate(-50%, 50%); */
     width: 100%;
     height: 100%;
-    background: linear-gradient(transparent, transparent, #05320039 );
+    background: linear-gradient(transparent, transparent, #05320039);
 }
 
 .page-grouper {
@@ -83,7 +88,7 @@ onMounted(() => {
     gap: 1rem;
     /* border: 1px solid red; */
     background-color: white;
-    border-radius: 2rem;
+    border-radius: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.072);
 
 }
@@ -138,6 +143,7 @@ img {
 
 .profile-btn:active,
 .projects-btn:active {
+    color: white;
     background-color: rgb(0, 139, 14);
 }
 
@@ -161,10 +167,11 @@ img {
     margin-left: 0.3rem;
 }
 
-.downarrow{
+.downarrow {
     color: #ffffff;
 }
-.forwardarrow{
+
+.forwardarrow {
     color: var(--theme-color);
 }
 
@@ -173,4 +180,25 @@ img {
     font-weight: 600;
 }
 
+
+@media (min-width: 720px) {
+    .page1 {
+        padding: 1.5rem 0;
+    }
+
+    .page-container {
+        width: 60%;
+        height: 100%;
+        box-shadow: 0 0 10px 2px #5c4bf125;
+        border-radius: 2rem;
+    }
+
+    .image-wrapper{
+        width: 70%;
+    }
+
+    .page-grouper{
+        width: 70%;
+    }
+}
 </style>

@@ -1,52 +1,54 @@
 <template>
     <div class="education-container">
-        <div class="heading">
-            Education Background
-        </div>
-        <div class="timelinediv">
+        <div class="page-container">
+            <div class="heading">
+                Education Background
+            </div>
+            <div class="timelinediv">
 
-            <div class="timeline">
-                <div class="dots dot1"></div>
-                <div class="dots dot2"></div>
-                <div class="dots dot3"></div>
+                <div class="timeline">
+                    <div class="dots dot1"></div>
+                    <div class="dots dot2"></div>
+                    <div class="dots dot3"></div>
 
 
-                <div class="educ-card card1">
-                    <div class="image-div">
-                        <img src="@\assets\ntare.webp" alt="">
+                    <div class="educ-card card1">
+                        <div class="image-div">
+                            <img src="@\assets\ntare.webp" alt="">
+                        </div>
+                        <div class="details">
+                            <p class="schname">Ntare school</p>
+                            <p class="grades">24 agg</p>
+                            <p class="year">2014 - 2017</p>
+                        </div>
                     </div>
-                    <div class="details">
-                        <p class="schname">Ntare school</p>
-                        <p class="grades">24 agg</p>
-                        <p class="year">2014 - 2017</p>
-                    </div>
-                </div>
 
-                <div class="educ-card card2">
-                    <div class="image-div">
-                        <img src="@\assets\kitende.png" alt="">
+                    <div class="educ-card card2">
+                        <div class="image-div">
+                            <img src="@\assets\kitende.png" alt="">
+                        </div>
+                        <div class="details">
+                            <p class="schname">St Mary's Kitende</p>
+                            <p class="grades">19 pts</p>
+                            <p class="year">2018 - 2019</p>
+                        </div>
                     </div>
-                    <div class="details">
-                        <p class="schname">St Mary's Kitende</p>
-                        <p class="grades">19 pts</p>
-                        <p class="year">2018 - 2019</p>
-                    </div>
-                </div>
 
-                <div class="educ-card card3">
-                    <div class="image-div">
-                        <img src="@\assets\kyambogo.webp" alt="">
+                    <div class="educ-card card3">
+                        <div class="image-div">
+                            <img src="@\assets\kyambogo.webp" alt="">
+                        </div>
+                        <div class="details">
+                            <p class="schname">Kyambogo University</p>
+                            <p class="course">Land surveying || GIS</p>
+                            <p class="grades">1st class</p>
+                            <p class="year">2014 - 2017</p>
+                        </div>
                     </div>
-                    <div class="details">
-                        <p class="schname">Kyambogo University</p>
-                        <p class="course">Land surveying || GIS</p>
-                        <p class="grades">1st class</p>
-                        <p class="year">2014 - 2017</p>
-                    </div>
+
                 </div>
 
             </div>
-
         </div>
     </div>
 
@@ -63,9 +65,20 @@
     flex-direction: column;
     align-items: center;
     padding: 1.5rem 0;
+    width: 100%;
 }
 
-.timelinediv{
+.page-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0;
+    width: 100%;
+    position: relative;
+}
+
+.timelinediv {
     position: relative;
     width: 90%;
     height: 20rem;
@@ -204,5 +217,26 @@ img {
     scale: 0.85;
     /* aspect-ratio: 1/1; */
     object-fit: cover;
+}
+
+
+
+
+
+
+
+@media (min-width: 720px) {
+    .page-container {
+        width: 60%;
+        height: 100%;
+        border-radius: 1rem;
+        box-shadow: 0 0 10px 2px #5c4bf125;
+    }
+
+    .educ-card {
+        position: absolute;
+        left: 2rem;
+        width: 50vw;
+    }
 }
 </style>

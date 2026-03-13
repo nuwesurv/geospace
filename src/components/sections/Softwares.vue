@@ -12,72 +12,75 @@ const { projectSelected } = storeToRefs(useProjectStore())
 
 <template>
   <div class="cartography-section" v-if="projectSelected === 'software' || seePortifolio">
-    <div class="heading">Software Acquitance</div>
-    <div class="positioning-div">
-      <div class="displaycard">
-        <p class="displaycard-heading">Langs, libs and frameworks</p>
-        <div class="divs-grouper">
-          <div class="image-div">
-            <img src="@\assets\python.webp" alt="">
-          </div>
-          <div class="image-div">
-            <img src="@\assets\javascript.webp" alt="">
-          </div>
-          <div class="image-div">
-            <img src="@\assets\html.webp" alt="">
-          </div>
-          <div class="image-div">
-            <img src="@\assets\css.webp" alt="">
-          </div>
-          <div class="image-div">
-            <img src="@\assets\vuejs.webp" alt="">
-          </div>
-          <div class="image-div">
-            <img src="@\assets\flet.svg" alt="">
+    <div class="page-container">
+
+      <div class="heading">Software Skills</div>
+      <div class="positioning-div">
+        <div class="displaycard">
+          <p class="displaycard-heading">Langs, libs and frameworks</p>
+          <div class="divs-grouper">
+            <div class="image-div">
+              <img src="@\assets\python.webp" alt="">
+            </div>
+            <div class="image-div">
+              <img src="@\assets\javascript.webp" alt="">
+            </div>
+            <div class="image-div">
+              <img src="@\assets\html.webp" alt="">
+            </div>
+            <div class="image-div">
+              <img src="@\assets\css.webp" alt="">
+            </div>
+            <div class="image-div">
+              <img src="@\assets\vuejs.webp" alt="">
+            </div>
+            <div class="image-div">
+              <img src="@\assets\flet.svg" alt="">
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="displaycard ">
-        <p class="displaycard-heading">Services</p>
-        <div class="divs-grouper">
-          <div class="image-div">
-            <img src="@\assets\netlify.webp" alt="">
-          </div>
-          <div class="image-div">
-            <img src="@\assets\supabase.webp" alt="">
-          </div>
-          <div class="image-div">
-            <img src="@\assets\mapbox1.png" alt="">
-          </div>
-          <div class="image-div">
-            <img src="@\assets\chatgpt.webp" alt="">
+        <div class="displaycard ">
+          <p class="displaycard-heading">Services</p>
+          <div class="divs-grouper">
+            <div class="image-div">
+              <img src="@\assets\netlify.webp" alt="">
+            </div>
+            <div class="image-div">
+              <img src="@\assets\supabase.webp" alt="">
+            </div>
+            <div class="image-div">
+              <img src="@\assets\mapbox1.png" alt="">
+            </div>
+            <div class="image-div">
+              <img src="@\assets\chatgpt.webp" alt="">
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="displaycard">
-        <p class="displaycard-heading">Softwares</p>
-        <div class="divs-grouper">
-          <div class="image-div">
-            <img src="@\assets\qgis1.png" alt="">
-          </div>
-          <div class="image-div">
-            <img src="@\assets\blender.webp" alt="">
-          </div>
-          <div class="image-div">
-            <img src="@\assets\arcmap.webp" alt="">
-          </div>
-          <div class="image-div">
-            <img src="@\assets\civil3d.webp" alt="">
-          </div>
-          <div class="image-div">
-            <img src="@\assets\davinci.webp" alt="">
+        <div class="displaycard">
+          <p class="displaycard-heading">Softwares</p>
+          <div class="divs-grouper">
+            <div class="image-div">
+              <img src="@\assets\qgis1.png" alt="">
+            </div>
+            <div class="image-div">
+              <img src="@\assets\blender.webp" alt="">
+            </div>
+            <div class="image-div">
+              <img src="@\assets\arcmap.webp" alt="">
+            </div>
+            <div class="image-div">
+              <img src="@\assets\civil3d.webp" alt="">
+            </div>
+            <div class="image-div">
+              <img src="@\assets\davinci.webp" alt="">
+            </div>
           </div>
         </div>
+
+
       </div>
-
-
     </div>
   </div>
 </template>
@@ -85,6 +88,20 @@ const { projectSelected } = storeToRefs(useProjectStore())
 
 <style scoped>
 .cartography-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  height: auto;
+  padding: 1.2rem 0;
+  background-color: white;
+  /* border: 1px solid red; */
+  /* background-color: var(--background-primary); */
+  color: var(--theme-color);
+}
+
+.page-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -199,5 +216,20 @@ img {
   .map-title {
     font-size: 1rem;
   }
+}
+
+
+
+
+@media (min-width: 720px) {
+  .cartography-section{
+    padding: 1.2rem;
+  }
+    .page-container {
+        width: 60%;
+        height: 100%;
+        box-shadow: 0 0 10px 2px #5c4bf125;
+        border-radius: 1rem;
+    }
 }
 </style>

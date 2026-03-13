@@ -170,24 +170,24 @@ function flyToPlace() {
 }
 
 
-function goBack(){
-    if (isFirsttime.value && currentPlace.value === 0){
+function goBack() {
+    if (isFirsttime.value && currentPlace.value === 0) {
         currentPlace.value = 0
         isFirsttime.value = false
         return
     }
-    if (currentPlace.value > 0 && currentPlace.value < places.value.length+1){
+    if (currentPlace.value > 0 && currentPlace.value < places.value.length + 1) {
         currentPlace.value--
     }
 }
-function goForward(){
-    if (isFirsttime.value && currentPlace.value === 0){
+function goForward() {
+    if (isFirsttime.value && currentPlace.value === 0) {
         currentPlace.value = 0
         isFirsttime.value = false
         return
     }
-    
-    if (currentPlace.value > -1 && currentPlace.value < places.value.length-1){
+
+    if (currentPlace.value > -1 && currentPlace.value < places.value.length - 1) {
         currentPlace.value++
         console.log(currentPlace.value)
         console.log(places.value.length)
@@ -200,110 +200,107 @@ function goForward(){
 <template>
     <div class="accomplishment-container">
         <!-- ✅ Wrapper ensures map container is empty -->
-        <div class="map-div">
-            <div id="map"></div>
-            <div class="map-title">WORK HISTORY</div>
+        <div class="page-container">
+            <div class="map-div">
+                <div id="map"></div>
+                <div class="map-title">WORK HISTORY</div>
+            </div>
+            <div class="button-wrapper">
+                <div class="action-buttons" @click="goBack(), flyToPlace()">
+                    <div class="icondiv">
+                        <span class="material-symbols-outlined" v-if="fontLoaded">keyboard_double_arrow_left</span>
+                    </div>
+                    Prev role
+                </div>
+                <div class="action-buttons" @click="goForward(), flyToPlace()">Next role
+                    <div class="icondiv">
+                        <span class="material-symbols-outlined " v-if="fontLoaded">keyboard_double_arrow_right</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- UNRA card -->
+            <div ref="infoCard1" class="map-info-card">
+                <div class="downward-arrow"></div>
+
+                <div class="card-header">
+                    <div class="image-div">
+                        <img src="@/assets/unra.webp" />
+                    </div>
+
+                    <div class="header-details">
+                        <h3>UNRA, Nakawa</h3>
+                        <h4>Land surveying Internee</h4>
+                        <h4>Dec 2023 - Jan 2024</h4>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <p><b>Roles:</b><br>
+                        - Execute boundary opening surveys to support Valuation surveys.<br>
+                        - Execute topographic surveys to determine site elevations and feature positions.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- I&G card -->
+            <div ref="infoCard2" class="map-info-card">
+                <div class="downward-arrow"></div>
+
+                <div class="card-header">
+                    <div class="image-div">
+                        <img src="@/assets/ig.webp" />
+                    </div>
+
+                    <div class="header-details">
+                        <h3>I&amp;G Maxconsults, NSA mall</h3>
+                        <h4>Land surveyor || GIS</h4>
+                        <h4>Dec 2024 - till date</h4>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <p><b>Roles:</b><br>
+                        - Execute boundary opening surveys to support Valuation surveys.<br>
+                        - Execute topographic surveys to determine site elevations and feature positions.<br>
+                        - Extension of control points to support controlled Land survey work.
+
+                    </p>
+                </div>
+            </div>
+
+            <!-- MAYUGE Slaac card -->
+            <div ref="infoCard3" class="map-info-card">
+                <div class="downward-arrow"></div>
+
+                <div class="card-header">
+                    <div class="image-div">
+                        <img src="@/assets/mayuge_slaac.webp" />
+                    </div>
+
+                    <div class="header-details">
+                        <h3>SLAAC Lot 3, Mayuge</h3>
+                        <h4>GIS data manager.</h4>
+                        <h4>Jan 2025 - Feb 2025</h4>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <p><b>Roles:</b><br>
+                        - Plotting spatial data collected by field surveyors.<br>
+                        - Correct topological inconsistencies in the spatial data collected by the field surveyors.<br>
+                        - Report status of data collection in regard to project target.<br>
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="button-wrapper">
-            <div class="action-buttons" @click="goBack(), flyToPlace()">
-                <div class="icondiv">
-                    <span class="material-symbols-outlined" v-if="fontLoaded">keyboard_double_arrow_left</span>
-                </div>
-                Prev role
-            </div>
-            <div class="action-buttons" @click="goForward(), flyToPlace()">Next role
-                <div class="icondiv">
-                    <span class="material-symbols-outlined " v-if="fontLoaded">keyboard_double_arrow_right</span>
-                </div>
-            </div>
-        </div>
-
-
-
-
-        <!-- UNRA card -->
-        <div ref="infoCard1" class="map-info-card">
-            <div class="downward-arrow"></div>
-
-            <div class="card-header">
-                <div class="image-div">
-                    <img src="@/assets/unra.webp" />
-                </div>
-
-                <div class="header-details">
-                    <h3>UNRA, Nakawa</h3>
-                    <h4>Land surveying Internee</h4>
-                    <h4>Dec 2023 - Jan 2024</h4>
-                </div>
-            </div>
-
-            <div class="card-body">
-                <p>
-                    I got the opportunity to work on land acquisition projects where I gained skills in the field of
-                    mapping and spatial data management on a large scale.
-                    <br><br>
-                    It's at this time I got interested in GIS mapping softwares like QGIS.
-                </p>
-            </div>
-        </div>
-
-
-        <!-- I&G card -->
-        <div ref="infoCard2" class="map-info-card">
-            <div class="downward-arrow"></div>
-
-            <div class="card-header">
-                <div class="image-div">
-                    <img src="@/assets/ig.webp" />
-                </div>
-
-                <div class="header-details">
-                    <h3>I&amp;G Maxconsults, NSA mall</h3>
-                    <h4>Land surveyor || GIS</h4>
-                    <h4>Dec 2024 - till date</h4>
-                </div>
-            </div>
-
-            <div class="card-body">
-                <p>
-                    I am a Land surveyor and GIS data manager at I&G Maxconsults where my role entails carrying out survey work.
-                    <br><br>
-                    Which include: Opening of Boundaries, Topographical surveys.
-                    <br><br>
-                    I develop softwares too for the firm which aid in automating its work operations.
-                </p>
-            </div>
-        </div>
-
-        <!-- MAYUGE Slaac card -->
-        <div ref="infoCard3" class="map-info-card">
-            <div class="downward-arrow"></div>
-
-            <div class="card-header">
-                <div class="image-div">
-                    <img src="@/assets/mayuge_slaac.webp" />
-                </div>
-
-                <div class="header-details">
-                    <h3>SLAAC Lot 5, Mayuge</h3>
-                    <h4>Cartography</h4>
-                    <h4>Jan 2025 - Feb 2025</h4>
-                </div>
-            </div>
-
-            <div class="card-body">
-                <p>
-                    I was a Cartographer on this role where my duties were to map, work closely with Field surveyors and Data managers to ensure that both the spatial and non-spatial data could meet the SLAAC project standards.
-                    <br><br>
-                    On this role, I mapped over 8000+ Parcels and presented it for submission to the Ministry of Lands.
-                </p>
-            </div>
-        </div>
-
     </div>
-
-
 </template>
+
 
 <style scoped>
 .accomplishment-container {
@@ -314,6 +311,25 @@ function goForward(){
     overflow: hidden;
     /* border-bottom: 1px solid var(--theme-color); */
 }
+
+/* .page-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+} */
+.page-container {
+    height: 35rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(231, 255, 231);
+    overflow: hidden;
+}
+
+
 
 .map-title {
     position: absolute;
@@ -329,7 +345,7 @@ function goForward(){
     backdrop-filter: blur(15px);
     height: 2.5rem;
     text-align: center;
-    
+
 }
 
 .map-div {
@@ -505,5 +521,22 @@ p b {
     font-size: 14px;
     line-height: 1.4;
     color: var(--text-secondary);
+}
+
+
+
+@media (min-width: 720px) {
+    .accomplishment-container {
+        justify-content: center;
+        align-items: center;
+        padding: 1.5rem 0;
+    }
+
+    .page-container {
+        width: 60%;
+        height: 100%;
+        box-shadow: 0 0 10px 2px #5c4bf125;
+        border-radius: 1rem;
+    }
 }
 </style>

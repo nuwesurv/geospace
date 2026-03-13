@@ -18,26 +18,23 @@ onMounted(() => {
 
 <template>
     <div class="projects-div">
-        <div class="heading">NOTABLE PERSONAL GIS PROJECT</div>
-        <div class="media-div">
-            <video :src="videoSrc" muted loop controls playsinline></video>
-        </div>
-        <div class="details">
-            <p>Our 3 people team on the SLAAC project were tasked with removing 5000+ small topological errors in the
-                surveyed data i.e. sliver polygons, gaps and overlaps etc.
-                The task was huge and time consuming yet there were others tasks to be accomplished.
-                <br><br>
-                So I set out to develop a QGIS plugin to solve these topological errors
-                an example shown above where gaps in geometry are automatically filled using one parcel as a reference
-                boundary choosen by User.
-                <br><br>
-                As a result, the task was heavily reduced, finished in just one day and we proceeded to other duties
-                saving the company several days of work.
-            </p>
-        </div>
-        <div class="projects-btn" @click="seePortifolio = false">See other projects
-            <div class="icondiv">
-                <span class="material-symbols-outlined forwardarrow" v-if="fontLoaded">arrow_forward</span>
+        <div class="page-container">
+
+            <div class="heading">PERSONAL GIS PROJECT</div>
+            <div class="media-div">
+                <video :src="videoSrc" loop controls playsinline></video>
+            </div>
+            <div class="details">
+                <p>This plugin is designed and built to automate parcel boundary manipulation to ensure nearby parcel
+                    boundaries touch each other given a manipulation distance tolerance (e.g. 0.05m).<br><br> Given two
+                    nearby parcels, in a distance less than the tolerance distance e.g. 0.05m, the plugin manipulates
+                    the boundaries of one of the parcels to touch the neighbor just as it would be on ground.
+                </p>
+            </div>
+            <div class="projects-btn" @click="seePortifolio = false">See other projects
+                <div class="icondiv">
+                    <span class="material-symbols-outlined forwardarrow" v-if="fontLoaded">arrow_forward</span>
+                </div>
             </div>
         </div>
     </div>
@@ -45,6 +42,20 @@ onMounted(() => {
 
 <style scoped>
 .projects-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: auto;
+    padding: 2rem 0;
+    background-color: rgb(251, 255, 251);
+    color: var(--theme-color);
+    /* border: 1px solid red; */
+    box-shadow: inset 0 0 15px rgba(0, 128, 11, 0.182);
+}
+
+.page-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,5 +124,21 @@ video {
     align-items: center;
     border-radius: 50%;
     margin-left: 0.3rem;
+}
+
+
+
+
+@media (min-width: 720px) {
+    .projects-div{
+        padding: 3rem 0;
+    }
+
+    .page-container {
+        width: 60%;
+        height: 100%;
+        box-shadow: 0 0 10px 2px #5c4bf125;
+        border-radius: 1rem;
+    }
 }
 </style>
